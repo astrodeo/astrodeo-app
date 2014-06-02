@@ -1,0 +1,186 @@
+/* application.scss */
+
+/* Base Font Size */
+$base-font: 16;
+/* Base Width */
+$base-width: 1140;
+/* Base Blue */
+$base-color: #05598d;
+
+@import "normalize";
+@import "bourbon/bourbon";
+@import "neat/neat";
+@import "bitters/bitters";
+@import "refills/modal";
+@import "refills/sliding-menu";
+@import "base";
+@import "layout";
+@import "font-awesome/font-awesome";
+
+/* Index
+*************************************************************************/
+
+/* Card */
+.card {
+	width: percentage(344 / $base-width);
+	margin: 0 percentage(14 / $base-width) 28px;
+	background: #111;
+	float: left;
+	/* Card: Card Info: Photo */
+	.card-photo {
+		max-width: 344px;
+		max-height: 212px;
+		display: block;
+		margin: 0 auto;
+	}
+	/* Card: Card Info */
+	.card-info {
+		height: 45px;
+		padding: 2px 10px;
+		display: block;
+		background: #fff;
+		line-height: 1em;
+		/* Card: Card Info: User */
+		.card-user {
+			width: 50%;
+			display: block;
+			margin-top: 2px;
+			font-weight: bold;
+			float: left;
+		}
+		/* Card: Card Info: Time */
+		.card-time {
+			width: 50%;
+			display: block;
+			margin-top: 2px;
+			color: #999;
+			float: left;
+			clear: left;
+		}		
+		/* Card: Card Info: Share */
+		.card-share {
+			display: block;
+			margin: 7px 0 0;
+			color: #ccc;
+			float: right;
+			font-size: em(24);
+			text-align: right;
+		}
+	}	
+}
+
+
+/* Utility
+*************************************************************************/
+
+/* Terms of Service Text */
+.text-tos {
+	font-size: em(12);
+}
+
+
+/* User Feed
+*************************************************************************/
+
+/* Feed Content */
+.content-feed {
+	
+	/* Feed Content: Card */
+	.card {
+		width: percentage(344 / 778);
+		margin: 0 percentage(14 / 778) 28px;
+	}
+}
+
+
+/* Sidebar Module 
+*************************************************************************/
+
+/* Sidebar */
+.sidebar {
+	/* Sidebar: Module */
+	.module {
+		@include clearfix;
+		margin-bottom: 10px;
+		padding: 20px 0;
+		background: #fff;
+		color: #333;
+		border-radius: 5px;
+		/* Sidebar: Module: Button */
+		button {
+			@include button(simple, #07c650);
+			font-size: em(18);
+			&.active {
+				@include button(simple, #0788d7);
+				font-size: em(18);
+			}
+			&.button-cancel {
+				@include button(simple, #333);
+			}
+		}
+		/* Sidebar: User Module */
+		&.module-user {
+			text-align: center;
+			/* Sidebar: User Module: User Name */
+			.user-name {
+				display: block;
+				margin-bottom: 10px;
+				font-size: em(32);
+				font-weight: bold;
+			}
+			/* Sidebar: User Module: Username */
+			.user-username {
+				display: block;
+				margin-bottom: 20px;
+				color: #666;
+				font-size: em(20);
+				font-weight: bold;
+			}
+		}
+		/* Sidebar: Stats Module */
+		&.module-stats {
+			background: #f9f9f9;
+			/* Sidebar: Stats Module: List Items */
+			.list-items {
+				/* Sidebar: Stats Module: List Items: Item */
+				.item {
+					width: percentage(1/3);
+					float: left;
+					text-align: center;
+					/* Sidebar: Stats Module: List Items: Item: Count */
+					.stats-count {
+						display: block;
+						font-size: em(32);
+						font-weight: bold;
+						color: #0788d7;
+					}
+					/* Sidebar: Stats Module: List Items: Item: Label */
+					.stats-label {
+						display: block;
+					}
+				}
+			}
+		}
+		/* Sidebar: Details Module */
+		&.module-details {
+			padding: 20px 40px;
+			@include box-sizing(border-box);
+			/* Sidebar: Details Module: Title */
+			.module-title {
+				text-align: center;
+				margin-bottom: 10px;
+			}
+			/* Sidebar: Details Module: Item */
+			.item {
+				display: block;
+				@include clearfix();
+			}
+			/* Sidebar: Details Module: Label */
+			label {
+				float: left;
+				display: inline-block;
+				margin: 0 10px 0 0;
+			}
+		}
+	}
+}

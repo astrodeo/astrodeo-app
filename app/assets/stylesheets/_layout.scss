@@ -1,0 +1,176 @@
+/* _layout.scss */
+
+/* Base Font Size */
+$base-font: 16;
+/* Base Width */
+$base-width: 1140;
+/* Base Blue */
+$base-color: #05598d;
+
+/* Header
+*************************************************************************/
+.header {
+	height: 60px;
+	display: block;
+	border-bottom: 5px solid #033a5c;
+	margin-bottom: 20px;
+	overflow: hidden;
+	color: #fff;
+	background: $base-color;
+
+	/* Header: Anchor */
+	a {
+		color: #fff;
+	}
+	
+	/* Header: Logo */
+	.logo {
+		margin: 8px 0 0 percentage(10 / $base-width);
+		float: left;
+		font-family: 'Economica', sans-serif;
+		font-size: em(32);
+	}
+	
+	/* Header: Public Navigation */
+	.nav {
+		width: percentage(530 / $base-width);
+		margin-right: percentage(10 / $base-width);
+		float: right;
+		text-align: right;
+
+		/* Header: Public Navigation: Anchor */
+		.link {
+			display: inline-block;
+			margin: 5px 10px 0;
+			padding: 10px 20px;
+			cursor: pointer;
+			color: #fff;
+			font-size: em(18);
+			
+			/* Header: Public Navigation: Outline Anchor */
+			&.link-o {
+				border: 1px solid #fff;
+				border-radius: 5px;
+
+				/* Header: Public Navigation: Hover Outline Anchor */
+				&:hover {
+					color: $base-color;
+					background: #fff;
+				}
+			}
+		}
+		
+		/* Header: Public Navigation: Upload Button */
+		.btn-upload {
+			margin-top: 8px;
+			@include button(simple, #07c650);
+			font-size: em(18);
+			
+			/* Header: Public Navigation: Upload Button: Font Awesome */
+			.fa {
+				color: #047c32;
+			}
+		}
+		
+		.fa-cog {
+			margin-right: 28px;
+			font-size: em(36);
+			cursor: pointer;
+			position: relative;
+			top: 5px;
+		}
+	}
+	
+}
+
+
+/* Container
+*************************************************************************/
+.container {
+	max-width: $base-width + px;
+	margin: 0 auto;
+	/* Container: Sidebar */
+	.sidebar {
+		width: percentage(344 / $base-width);
+		display: block;
+		float: left;
+	}
+
+	/* Container: Section */
+	section {
+		width: percentage(778 / $base-width);
+		display: block;
+		float: right;
+	}
+}
+
+
+/* Button
+*************************************************************************/
+
+/* Social Button */
+a.btn-social {
+	height: 50px;
+	display: block;
+	margin-bottom: 28px;
+	border-radius: 5px;
+	color: #fff;
+	font-weight: bold;
+	/* Active Social Button */
+	&:active {
+		color: #fff;
+	}
+	/* Visited Social Button */
+	&:visited {
+		color: #fff;
+	}
+	/* Google Social Button */
+	&.btn-google {
+		background: #e54636;
+	}
+	/* Twitter Social Button */
+	&.btn-twitter {
+		background: #55acee;
+	}
+	/* Social Button: Font Awesome Wrapper */
+	.fa-wrapper {
+		width: 50px;
+		height: 50px;
+		border-right: 1px solid #fff;
+		display: block;
+		float: left;
+		text-align: center;
+		/* Social Button: Font Awesome */
+		.fa {
+			margin-top: 8px;
+			font-size: em(32);
+		}
+	}
+	/* Social Button: Button Text */
+	.btn-text {
+		margin: 10px 0 0 30px;
+		float: left;
+		font-size: em(18);
+	}
+}
+
+
+/* Modal (Override for Refills Gem)
+*************************************************************************/
+
+/* Modal: Modal Close */
+.modal .modal-close {
+	background-color: transparent;
+}
+
+/* Modal Window */
+.modal-window {
+	/* Modal Window: Inner */
+	.modal-inner {
+		width: percentage(400 / $base-width);
+		max-width: 400px;
+		padding: 28px percentage(28 / $base-width);
+		background: #f0f0f0;
+	}
+	
+}

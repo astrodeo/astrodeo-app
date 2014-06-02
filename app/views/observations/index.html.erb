@@ -1,0 +1,15 @@
+<div class="">
+    <div class="container">
+        <% @observations.each do |obsersvation| %>
+        <div class="card">
+            <a href="<%= url_for(:controller => 'observations', :action => 'photo', :id =>  obsersvation.id ) %>"><img src="/images/<%= obsersvation.photos.first.path %>" class="card-photo" /></a>
+            <div class="card-info">
+                <!-- TODO Link to asteroid name -->
+                <%= link_to obsersvation.feed.user.name, url_for(:controller => 'feeds', :action => 'index', :fid =>  obsersvation.feed.id ), :class => 'card-user' %>
+                <a href="https://twitter.com/home?status=Check%20out%20this%20observation%20on%20@astrodeoapp%20<%= request.host %><%= url_for(:controller => 'observations', :action => 'photo', :id =>  obsersvation.id ) %>" class="fa fa-share-square card-share">&nbsp;</a>
+                <span class="card-time"><%= time_ago_in_words(obsersvation.created_at)%> ago</span>
+            </div>
+        </div>
+        <% end %>
+    </div>
+</div>

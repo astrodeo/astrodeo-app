@@ -1,0 +1,33 @@
+/* _base.scss */
+
+/* Body */
+body {
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+	font-weight: 300;
+
+	color: #666;
+	background: #f0f0f0;
+}
+
+/* Anchors */
+a {
+	&:link {
+		color: #0788d7;
+		text-decoration: none;
+	}
+
+	/* Hover Anchors */
+	&:hover {
+		color: #0788d7;
+	}
+	
+	/* Active Anchors */
+	&:active {
+		color: #0788d7;
+	}
+
+	/* Visited Anchors */
+	&:visited {
+		color: #0788d7;
+	}
+}

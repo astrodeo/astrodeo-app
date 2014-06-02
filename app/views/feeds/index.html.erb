@@ -1,0 +1,40 @@
+<!-- INDEX -->
+<div class="content-feed">
+	<div class="container">
+		<div class="sidebar">
+			<div class="module module-user">
+				<!-- TODO change to username -->
+				<span class="user-name"><%= @feed.user.name %></span>
+				<span class="user-username"><%= @feed.user.username %></span>
+				<% if @current_user && @current_user.id != @feed.user.id %>
+					<% if @is_current_user_following %>
+						<button class="active">Following</button>
+					<% else %>
+						<a href="<%= url_for :controller => "feeds", :action => "follow", :fid => @feed.id %>"><button>Follow</button></a>
+					<% end %>
+				<% end %>
+			</div> 
+			<div class="module module-stats">
+				<ul class="list-items">
+					<li class="item"><span class="stats-count"><%= @observations.count %></span> <span class="stats-label">Posts</span></li>
+					<li class="item"><span class="stats-count"><%= @following.count %></span> <span class="stats-label">Following</span></li>
+					<li class="item"><span class="stats-count"><%= @followers.count %></span> <span class="stats-label">Followers</span></li>
+				</ul>
+			</div>
+		</div>
+	
+		<section>
+			<% @observations.each do |obsersvation| %>
+				<div class="card">
+        			<a href="<%= url_for(:controller => 'observations', :action => 'photo', :id =>  obsersvation.id ) %>"><img src="/images/<%= obsersvation.photos.first.path %>" class="card-photo" /></a>
+					<div class="card-info">
+					 	<%= link_to obsersvation.feed.user.name, url_for(:controller => 'feeds', :action => 'index', :fid =>  obsersvation.feed.id ), :class => 'card-user' %>
+						<a href="https://twitter.com/home?status=Check%20out%20this%20observation%20on%20@astrodeoapp%20<%= request.host %><%= url_for(:controller => 'observations', :action => 'photo', :id =>  obsersvation.id ) %>" class="fa fa-share-square card-share">&nbsp;</a>
+						<span class="card-time"><%= time_ago_in_words(obsersvation.created_at)%> ago</span>
+					</div>
+				</div>
+        	<% end %>
+		</section>
+	
+	</div>
+</div>

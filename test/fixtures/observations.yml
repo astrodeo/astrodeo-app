@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  seen: 2014-04-12
+  right_asecnsion: MyString
+  declination: MyString
+  magnitude: MyString
+  catalog_number: MyString
+
+two:
+  seen: 2014-04-12
+  right_asecnsion: MyString
+  declination: MyString
+  magnitude: MyString
+  catalog_number: MyString

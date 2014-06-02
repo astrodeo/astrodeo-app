@@ -1,0 +1,17 @@
+<%= form_for(@obersvation) do |f| %>
+  <% if @obersvation.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@obersvation.errors.count, "error") %> prohibited this obersvation from being saved:</h2>
+
+      <ul>
+      <% @obersvation.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
